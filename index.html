@@ -62,7 +62,11 @@
         </div>
         <div class="hero-container__about">
             <a href="#">What is arcarta?</a>
-            <a href="#"><img src="./assets/svg/arrow.svg" alt="arrow icon"></a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+              </svg>
+            </a>
         </div>
         <img src="./assets/img/bg.png" alt="people in a gallery" class="img-bg">
       </div>
@@ -133,18 +137,16 @@
 
     <section>
       <div class="container promo-container">
-        <div class="promo-container__quiz">
+        <article class="promo-container__quiz">
           <img src="./assets/img/laptop.png" alt="laptop icon">
-          <p>Compliance quiz</p>
+          <p class="promo-container__quiz-link"><a href="#">Compliance quiz</a></p>
           <div class="promo-container__quiz-bottom">
-            <a href="#">
-              <p class="quiz-bottom-text">Begin</p>
-            </a>
-            <a href="#">
-              <img src="./assets/svg/arrow_short.svg" alt="arrow">
-            </a>
+            <p class="quiz-bottom-text">Begin</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
           </div>
-        </div>
+        </article>
         <div class="promo-container__descr">
           <div class="new-feature">
             <span class="new-feature__text">New</span>
@@ -163,7 +165,25 @@
     </section>
 
     <section>
-      <div class="container"></div>
+      <div class="container subscr-container">
+        <img src="./assets/img/frame_5.png" alt="gallery image">
+        <div class="subscr-container__content">
+          <div class="subscr-container__content-title">
+            <h4>Art world insight.</h4>
+          </div>
+          <div class="subscr-container__content-text">
+            <p>Receive our newsletter direct to your inbox to follow updates to legislation and the EU art-market's response.</p>
+          </div>
+          <div class="subscr-container__content-input">
+            <input type="text" placeholder="Your email">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
