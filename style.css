@@ -10,7 +10,6 @@ html {
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  /* background-color: #FFF8EE; */
   background-image: linear-gradient(to bottom, #FFF8EE, #fff);
 }
 h1 {
@@ -55,25 +54,32 @@ a:hover {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .header-container {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 90px;
-  margin-top: 16px;
+  margin-top: 20px;
   margin-bottom: 140px;
 }
 .logo {
-  margin-left: 70px;
-  flex-grow: 1;
+  padding-left: 55px;
+}
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
 .nav-list {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 .nav-list__item {
-  padding-right: 46px;
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
@@ -81,10 +87,10 @@ a:hover {
 .nav-list__item > a {
   color: #322F2E;
 }
-.login {
-  margin-right: 70px;
+.signup {
+  padding-right: 55px;
 }
-.btn-login {
+.btn-signup {
   width: 129px;
   height: 47px;
   font-size: 14px;
@@ -92,7 +98,7 @@ a:hover {
   color: #FFF;
   border: none;
 }
-.btn-login:hover {
+.btn-signup:hover {
   background-color: #A25D3C;
 }
 .btn {
@@ -100,6 +106,9 @@ a:hover {
   font-weight: 700;
   cursor: pointer;
   text-transform: capitalize;
+}
+.menu-burger-btn {
+  display: none;
 }
 .hero-container {
   display: flex;
@@ -194,11 +203,11 @@ a:hover {
   color: #C47344;
 }
 .img-bg {
-  max-width: 1440px;
+  width: 100%;
 }
 .main-content {
   margin: 0 auto 252px auto;
-  width: 1020px;
+  max-width: 1020px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
@@ -249,7 +258,7 @@ a:hover {
   padding-bottom: 32px;
 }
 .promo-container {
-  padding-left: 52px;
+  padding-left: 70px;
   margin-bottom: 135px;
   display: flex;
   justify-content: center;
@@ -357,7 +366,7 @@ a:hover {
   margin-bottom: 150px;
   display: flex;
   justify-content: flex-start;
-  width: 1200px;
+  max-width: 1200px;
   gap: 51px;
   background-color: #FAF7F3;
   border-radius: 10px;
@@ -413,7 +422,7 @@ a:hover {
   margin-bottom: 80px;
 }
 .footer-top {
-  padding: 0 130px;
+  padding: 0 115px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 189px;
@@ -487,7 +496,7 @@ a:hover {
   gap: 10px;
 }
 .footer-bottom {
-  padding: 0 130px;
+  padding: 0 115px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -515,4 +524,62 @@ a:hover {
 .footer-bottom-right__social a:hover {
   color: #C47344;
   text-decoration: none;
+}
+
+@media (max-width: 1080px) {
+  .header-container {
+    justify-content: space-between;
+  }
+  .nav-list {
+      display: flex;
+      height: 420px;
+      width: 300px;
+      z-index: 2;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      gap: 30px;
+      position: fixed;
+      top: 0px;
+      right: -500px;
+      padding-top: 100px;
+      background-color: #F9EDE2;
+      transition: 1s;
+  }
+  .menu-open {
+      right: 0;
+      position: absolute;
+      z-index: 3;
+  }
+  .menu-burger-btn {
+      margin-right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 3;
+  }
+  .menu-burger-btn::before {
+      content: "";
+      position: absolute;
+      width: 55px;
+      height: 32px;
+      top: -5px;
+      left: -5px;
+  }
+  .menu-burger-btn span {
+      height: 2px;
+      width: 45px;
+      background: #000;
+      transition: .5s;
+  }
+  .menu-active span:nth-of-type(1) {
+      transform: translateY(10px) rotate(45deg);
+  }
+  .menu-active span:nth-of-type(2) {
+      display: none;
+  }
+  .menu-active span:nth-of-type(3) {
+      transform: rotate(-45deg);
+  }
 }
