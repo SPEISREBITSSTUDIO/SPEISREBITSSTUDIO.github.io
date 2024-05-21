@@ -115,7 +115,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 130px;
+  margin-bottom: 140px;
 }
 .hero-container__feature {
   display: flex;
@@ -166,7 +166,7 @@ a:hover {
   line-height: 33px;
   text-align: center;
   text-wrap: wrap;
-  width: 524px;
+  max-width: 524px;
 }
 .hero-container__descr > span {
   text-transform: capitalize;
@@ -183,12 +183,12 @@ a:hover {
   background-color: #A25D3C;
 }
 .hero-container__clients {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
   gap: 40px;
   margin-top: 50px;
-  height: 100px;
 }
 .hero-container__about {
   display: flex;
@@ -206,12 +206,13 @@ a:hover {
   width: 100%;
 }
 .main-content {
-  margin: 0 auto 252px auto;
-  max-width: 1020px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 497px);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
   gap: 30px;
   justify-content: center;
+  margin-bottom: 252px;
 }
 .main-content__item {
   background-color: #FFFAF2;
@@ -361,9 +362,12 @@ a:hover {
 .btn > span {
   text-transform: lowercase;
 }
-.subscr-container {
-  padding: 43px 0 43px 60px;
+.subscr-section {
   margin-bottom: 150px;
+}
+.subscr-container {
+  padding: 43px 60px;
+  margin: 0 auto;
   display: flex;
   justify-content: flex-start;
   max-width: 1200px;
@@ -428,7 +432,7 @@ a:hover {
   gap: 189px;
 }
 .footer-top-left {
-  width: 340px;
+  max-width: 340px;
 }
 .footer-top-left__logo {
   margin-bottom: 15px;
@@ -490,10 +494,21 @@ a:hover {
   text-transform: capitalize;
 }
 .new-item {
-  display: flex;
-  justify-content:flex-start;
-  align-items: center;
-  gap: 10px;
+  position: relative;
+}
+.new-item::after {
+  position: absolute;
+  margin-left: 5px;
+  content: "New";
+  width: 51px;
+  height: 25px;
+  text-align: center;
+  background-color: #F9A38F;
+  border-radius: 50px;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+  color: #FFF;
 }
 .footer-bottom {
   padding: 0 115px;
@@ -526,6 +541,20 @@ a:hover {
   text-decoration: none;
 }
 
+@media (max-width: 1380px) {
+  .footer-top {
+    gap: 50px;
+    padding: 0;
+  }  
+  .footer-bottom {
+    padding: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .hero-container__clients {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 1080px) {
   .header-container {
     justify-content: space-between;
@@ -545,6 +574,12 @@ a:hover {
       padding-top: 100px;
       background-color: #F9EDE2;
       transition: 1s;
+  }
+  .logo {
+    padding-left: 0;
+  }
+  .signup {
+    padding-right: 0;
   }
   .menu-open {
       right: 0;
@@ -581,5 +616,97 @@ a:hover {
   }
   .menu-active span:nth-of-type(3) {
       transform: rotate(-45deg);
+  }
+  .main-content {
+    grid-template-columns: repeat(2, 400px);
+    margin-bottom: 200px;
+  }
+}
+@media (max-width: 935px) {
+  .subscr-container {
+    justify-content: center;
+  }
+  .subscr-container img {
+    display: none;
+  }
+  .subscr-container__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-top {
+    gap: 10px;
+  }  
+}
+@media (max-width: 870px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-top-left {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+  }
+  .footer-bottom {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 800px) {
+  h2 {
+    text-align: center;
+  }
+  .promo-container {
+    padding-left: 15px;
+  }
+  .promo-container__quiz {
+    display: none;
+  }
+  .promo-container__descr {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .promo-container__descr-text > p {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 80px;
+    line-height: 90px;
+  }
+  .hero-container__clients {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+  .hero-container__descr {
+    font-size: 20px;
+  }
+  .subscr-container {
+    padding: 30px 20px;
+  }
+  .footer-top-right {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .subscr-container__content-input {
+    width: 300px;
   }
 }
